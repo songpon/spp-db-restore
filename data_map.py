@@ -17,7 +17,8 @@ for m in missing:
         to_update[m['id']]=move_id
 
 print "SQL for delete"
-sql=" select id from account_move where id in (%s) "  %  ','.join(todo)
+sql="delete from account_move where id not in (%s) "  %  ','.join(todo)
+
 print sql
 
 print "Sql for update"
